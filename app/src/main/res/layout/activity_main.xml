@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/basketball_2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="@dimen/none"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_name"
+                    style="@style/TextStyle.TeamStyle"
+                    android:layout_margin="@dimen/margin"
+                    android:text="@string/home" />
+
+                <TextView
+                    android:id="@+id/home_score"
+                    style="@style/TextStyle.ScoreStyle"
+                    android:layout_marginBottom="@dimen/margin_bottom"
+                    android:freezesText="true"
+                    android:text="@string/score" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:onClick="threePointsHome"
+                    android:text="@string/point3" />
+
+                <Button
+                    style="@style/ButtonStyle.MarginStyle"
+                    android:onClick="twoPointsHome"
+                    android:text="@string/point2" />
+
+                <Button
+                    style="@style/ButtonStyle.MarginStyle"
+                    android:onClick="onePointHome"
+                    android:text="@string/free" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/bar"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="@dimen/none"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/visitor_name"
+                    style="@style/TextStyle.TeamStyle"
+                    android:layout_margin="@dimen/margin"
+                    android:text="@string/visitor" />
+
+                <TextView
+                    android:id="@+id/visitor_score"
+                    style="@style/TextStyle.ScoreStyle"
+                    android:layout_marginBottom="@dimen/margin_bottom"
+                    android:freezesText="true"
+                    android:text="@string/score" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:onClick="threePointsVisitor"
+                    android:text="@string/point3" />
+
+                <Button
+                    style="@style/ButtonStyle.MarginStyle"
+                    android:onClick="twoPointsVisitor"
+                    android:text="@string/point2" />
+
+                <Button
+                    style="@style/ButtonStyle.MarginStyle"
+                    android:onClick="onePointVisitor"
+                    android:text="@string/free" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/reset"
+            android:background="@drawable/button_shape"
+            android:onClick="resetAll"
+            android:shadowColor="@color/shadow"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:text="@string/reset"
+            android:textColor="@color/score" />
+
+    </RelativeLayout>
+</ScrollView>
