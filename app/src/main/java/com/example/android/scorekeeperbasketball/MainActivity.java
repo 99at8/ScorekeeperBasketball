@@ -2,6 +2,9 @@ package com.example.android.scorekeeperbasketball;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -141,5 +144,29 @@ public class MainActivity extends AppCompatActivity {
     public void onePointVisitor(View view) {
         visitorTeam.freeThrow();
         displayScoreVisitor(visitorTeam.getScore());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu,menu);
+        return true;
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+       TextView hScoreTextView = (TextView)findViewById(R.id.home_score) ;
+       TextView VScoreTextView = findViewById(R.id.visitor_score);
+        if(item.getItemId()==R.id.reset){
+             homeTeam.setScore(0);
+            visitorTeam.setScore(0);
+            hScoreTextView.setText("0");
+            VScoreTextView.setText("0");
+
+        }
+        if(item.getItemId()==R.id.quit){
+            System.exit(0);
+        }
+return true;
     }
 }
